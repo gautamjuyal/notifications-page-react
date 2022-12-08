@@ -1,0 +1,42 @@
+.notif-comp{
+    
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 1rem;
+    border-radius: 7px;
+}
+
+.notif-comp__profile{
+    display:flex;
+    height: 100%;
+}
+
+.notif-comp__profile img{
+    height: 3rem;
+}
+
+.notif-comp__dot{
+    padding: 0 10px;
+    display:flex;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.notif-comp__dot span{
+    color: red;
+    background-color: red;
+    display:flex;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+
+}
+
+.notif-comp.new{
+    background-color: hsl(205, 33%, 90%);
+}
+
+.notif-comp__dot.invisible{
+    display: none;
+}
