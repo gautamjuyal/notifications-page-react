@@ -1,23 +1,33 @@
 import "./NotificationComp.css";
+import React, { useState } from "react";
 
 function NotificationComp(props) {
-  const nStatus = props.status === "new" ? "new" : "";
-  console.log(props.imgPath);
+  const [notifState, setNotifState] = useState(props.status);
+
+  function notifStateHandler() {
+    if (notifState === "new") setNotifState("");
+  }
+
+  const nStatus = notifState === "new" ? "new" : "";
   return (
-    <div className={`notif-comp ${nStatus}`}>
+    <div className={`notif-comp ${nStatus}`} onClick={notifStateHandler}>
       <div className="notif-comp__profile">
-        <img src={`${props.imgPath}`} alt="profile-img" />
+        <img src={props.imgPath} alt="profile-img" />
       </div>
       <div className="notif-comp__text">
         <div className="notif-comp__notif">
-          <strong>{props.name}</strong> {props.action}{" "}
-          <strong>{props.object}</strong>
+          <div>
+            <strong>{props.name}</strong> {props.action}{" "}
+            <strong>{props.object}</strong>
+          </div>
+          <div
+            className={`notif-comp__dot ${
+              nStatus === "new" ? "" : "invisible"
+            }`}>
+            <span>.</span>
+          </div>
         </div>
         <div className="notif-comp__time">{props.time}</div>
-      </div>
-      <div
-        className={`notif-comp__dot ${nStatus === "new" ? "" : "invisible"}`}>
-        <span>.</span>
       </div>
     </div>
   );

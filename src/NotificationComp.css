@@ -16,6 +16,11 @@
     height: 3rem;
 }
 
+.notif-comp__notif{
+    display:flex;
+    align-items: center;
+}
+
 .notif-comp__dot{
     padding: 0 10px;
     display:flex;
@@ -34,7 +39,7 @@
 }
 
 .notif-comp.new{
-    background-color: hsl(205, 33%, 90%);
+    background-color: hsl(210, 60%, 98%);
 }
 
 .notif-comp__dot.invisible{

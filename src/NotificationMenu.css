@@ -30,13 +30,15 @@
 }
 
 .notif-menu__mar-btn{
-    border: none;
+    border: 1px solid hsl(211, 68%, 94%);
+    border-radius:8px;
     font-size: 1rem;
     color: hsl(224, 21%, 14%);
     font-weight: 500;
     background-color: white;
     box-sizing: border-box;
     padding: 7px 10px;
+    transition: background-color 400ms ease;
 }
 
 .notif-menu__mar-btn:hover{
