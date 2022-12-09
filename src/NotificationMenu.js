@@ -18,6 +18,7 @@ const NOTIFS = [
     action: "reacted to your recent post",
     object: "My first tournament today!",
     time: "1m ago",
+    subText: "",
   },
   {
     status: "new",
@@ -26,6 +27,7 @@ const NOTIFS = [
     action: "followed you",
     object: "",
     time: "5m ago ",
+    subText: "",
   },
   {
     status: "new",
@@ -34,6 +36,7 @@ const NOTIFS = [
     action: "has joined your group",
     object: "Chess Club",
     time: "1 day ago",
+    subText: "",
   },
   {
     status: "",
@@ -42,6 +45,8 @@ const NOTIFS = [
     action: "sent you a private message",
     object: "",
     time: "5 days ago",
+    subText:
+      "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
   },
   {
     status: "",
@@ -50,6 +55,7 @@ const NOTIFS = [
     action: "commented on your picture",
     object: "",
     time: "1 week ago",
+    subText: "",
   },
   {
     status: "",
@@ -58,6 +64,7 @@ const NOTIFS = [
     action: "reacted to your recent post",
     object: "5 end-game strategies to increase your win rate",
     time: " 2 weeks ago",
+    subText: "",
   },
   {
     status: "",
@@ -66,10 +73,12 @@ const NOTIFS = [
     action: "left the group Chess Club",
     object: "",
     time: "2 weeks ago",
+    subText: "",
   },
 ];
 
 function NotificationMenu() {
+  const [notifState, setNotifState] = useState();
   const [notifCount, setNotifCount] = useState(3);
 
   return (
@@ -93,6 +102,8 @@ function NotificationMenu() {
             object={n.object}
             time={n.time}
             status={n.status}
+            subText={n.subText}
+            onClick={notifState}
           />
         ))}
       </div>

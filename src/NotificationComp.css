@@ -1,4 +1,10 @@
 .notif-comp{
+    display:flex;
+    flex-direction: column;
+    color: hsl(224, 21%, 14%);
+}
+
+.notif-comp__main{
     
     display: flex;
     align-items: center;
@@ -30,12 +36,31 @@
 
 .notif-comp__dot span{
     color: red;
-    background-color: red;
+    background-color: hsl(1, 90%, 64%);
     display:flex;
     height: 5px;
     width: 5px;
     border-radius: 50%;
 
+}
+
+.notif-comp__time{
+    color: hsl(219, 14%, 63%)
+}
+
+.notif-comp__sub{
+    display:flex;
+    justify-content: right;
+}
+
+.subtext{
+    display: flex;
+    border: 1px solid hsl(219, 14%, 63%);
+    max-width: 90%;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    color: hsl(219, 12%, 42%);
 }
 
 .notif-comp.new{

@@ -11,23 +11,28 @@ function NotificationComp(props) {
   const nStatus = notifState === "new" ? "new" : "";
   return (
     <div className={`notif-comp ${nStatus}`} onClick={notifStateHandler}>
-      <div className="notif-comp__profile">
-        <img src={props.imgPath} alt="profile-img" />
-      </div>
-      <div className="notif-comp__text">
-        <div className="notif-comp__notif">
-          <div>
-            <strong>{props.name}</strong> {props.action}{" "}
-            <strong>{props.object}</strong>
-          </div>
-          <div
-            className={`notif-comp__dot ${
-              nStatus === "new" ? "" : "invisible"
-            }`}>
-            <span>.</span>
-          </div>
+      <div className={`notif-comp__main`} onClick={notifStateHandler}>
+        <div className="notif-comp__profile">
+          <img src={props.imgPath} alt="profile-img" />
         </div>
-        <div className="notif-comp__time">{props.time}</div>
+        <div className="notif-comp__text">
+          <div className="notif-comp__notif">
+            <div>
+              <strong>{props.name}</strong> {props.action}{" "}
+              <strong>{props.object}</strong>
+            </div>
+            <div
+              className={`notif-comp__dot ${
+                nStatus === "new" ? "" : "invisible"
+              }`}>
+              <span>.</span>
+            </div>
+          </div>
+          <div className="notif-comp__time">{props.time}</div>
+        </div>
+      </div>
+      <div className="notif-comp__sub">
+        {props.subText !== "" && <div className="subtext">{props.subText}</div>}
       </div>
     </div>
   );
