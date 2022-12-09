@@ -39,6 +39,8 @@
     box-sizing: border-box;
     padding: 7px 10px;
     transition: background-color 400ms ease;
+    font-family: inherit;
+    font-weight: 500;
 }
 
 .notif-menu__mar-btn:hover{
